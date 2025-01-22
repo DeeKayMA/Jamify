@@ -6,10 +6,24 @@ const Track = (props) => {
 
     // Creates the + - button
     const renderAction = () => {
-        return (
-        <button class={styles.TrackAction}>{props.isRemoval ? '-' : '+'}</button>
-        )
+        if (props.isRemoval) {
+            return <button className={styles.TrackAction} onClick={passTrackToRemove}>-</button>
+        } else {
+            return <button className={styles.TrackAction} onClick={passTrack}>+</button>
+        }
+
+        // return (
+        // <button className={styles.TrackAction}>{props.isRemoval ? '-' : '+'}</button>
+        // )
     };
+
+    const passTrack = () => {
+        props.onAdd(props.track)
+    }
+    const passTrackToRemove = () => {
+        props.onRemove(props.track)
+    }
+
 
     return (
         <div className={styles.Track}>
