@@ -7,34 +7,36 @@ import {Spotify} from '../../util/Spotify/Spotify';
 
 function App() {
   const [searchResults, setSearchResults] = useState([
-    {
-      name: 'Landed In Brooklyn',
-      artist: 'Khantrast',
-      album: 'Landed In Brooklyn',
-      id: 1
-    },
-    {
-      name: 'The Largest',
-      artist: 'BigXthaPlug',
-      album: 'TAKE CARE',
-      id: 2
-    }]
+    // {
+    //   name: 'Landed In Brooklyn',
+    //   artist: 'Khantrast',
+    //   album: 'Landed In Brooklyn',
+    //   id: 1
+    // },
+    // {
+    //   name: 'The Largest',
+    //   artist: 'BigXthaPlug',
+    //   album: 'TAKE CARE',
+    //   id: 2
+    // }
+  ]
   );
   const [playlistName, setPlaylistName] = useState("Example Playlist Name");
   const [playlistTracks, setPlaylistTracks] = useState(
     [
-      {
-        name: 'Mutt',
-        artist: 'Leon Thomas',
-        album: 'Mutt',
-        id: 3
-      },
-      {
-        name: 'On My Mama',
-        artist: 'Victoria Monét',
-        album: 'On My Mama',
-        id: 4
-      }]
+      // {
+      //   name: 'Mutt',
+      //   artist: 'Leon Thomas',
+      //   album: 'Mutt',
+      //   id: 3
+      // },
+      // {
+      //   name: 'On My Mama',
+      //   artist: 'Victoria Monét',
+      //   album: 'On My Mama',
+      //   id: 4
+      // }
+    ]
   );
 
   const addTrack = (track) => {
