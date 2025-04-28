@@ -10,15 +10,15 @@ function App() {
   const [playlistName, setPlaylistName] = useState("Example Playlist Name");
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
-  useEffect(() => {
-    const fetchToken = async () => {
-      const token = await Spotify.getAccessToken();
-      if (token) {
-      }
-    };
+  // useEffect(() => {
+  //   const fetchToken = async () => {
+  //     const token = await Spotify.getAccessToken();
+  //     if (token) {
+  //     }
+  //   };
   
-    fetchToken();
-  }, []);
+  //   fetchToken();
+  // }, []);
 
 
   const addTrack = (track) => {
