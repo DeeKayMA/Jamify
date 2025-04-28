@@ -9,14 +9,15 @@ function App() {
   const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("Example Playlist Name");
   const [playlistTracks, setPlaylistTracks] = useState([]);
-  const [accessToken, setAccessToken] = useState('');
 
   useEffect(() => {
-    const token = Spotify.getAccessToken();
-    if (token) { //Check for access token 
-      setAccessToken(token); 
-      // Spotify.search('Hire Me ').then(result => setSearchResults(result)); //Performs initial search
-    }
+    const fetchToken = async () => {
+      const token = await Spotify.getAccessToken();
+      if (token) {
+      }
+    };
+  
+    fetchToken();
   }, []);
 
 
