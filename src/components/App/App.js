@@ -1,43 +1,25 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 import {Spotify} from '../../util/Spotify/Spotify';
+import { use } from 'react';
 
 function App() {
-  const [searchResults, setSearchResults] = useState([
-    // {
-    //   name: 'Landed In Brooklyn',
-    //   artist: 'Khantrast',
-    //   album: 'Landed In Brooklyn',
-    //   id: 1
-    // },
-    // {
-    //   name: 'The Largest',
-    //   artist: 'BigXthaPlug',
-    //   album: 'TAKE CARE',
-    //   id: 2
-    // }
-  ]
-  );
+  const [searchResults, setSearchResults] = useState([]);
   const [playlistName, setPlaylistName] = useState("Example Playlist Name");
-  const [playlistTracks, setPlaylistTracks] = useState(
-    [
-      // {
-      //   name: 'Mutt',
-      //   artist: 'Leon Thomas',
-      //   album: 'Mutt',
-      //   id: 3
-      // },
-      // {
-      //   name: 'On My Mama',
-      //   artist: 'Victoria Monét',
-      //   album: 'On My Mama',
-      //   id: 4
-      // }
-    ]
-  );
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+  const [accessToken, setAccessToken] = useState('');
+
+  useEffect(() => {
+    const token = Spotify.getAccessToken();
+    if (token) { //Check for access token 
+      setAccessToken(token); 
+      // Spotify.search('Hire Me ').then(result => setSearchResults(result)); //Performs initial search
+    }
+  }, []);
+
 
   const addTrack = (track) => {
     const existingTracks = playlistTracks.find(t => t.id === track.id);
@@ -73,7 +55,7 @@ function App() {
 
   return (
     <div>
-      <h1>Ja<span className='highlight'>mmm</span>ing</h1>
+      <h1><span className='highlight'>Jam</span>ify</h1>
       <div className='App'>
         {/* <!-- Add search bar component-->  */}
         <SearchBar onSearch={search}/>
