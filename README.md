@@ -3,7 +3,7 @@
 
 Jamify is a minimalist web app built with React that lets you search for songs using the Spotify API and create a custom playlist directly in your Spotify account. Auth is handled via Spotify’s OAuth flow.
 
-![Jamify Screenshot](http://jamify-dk.netlify.app/jamify-screenshot.png)
+![Jamify Screenshot](https://jamify-dk.netlify.app/Jamify.png)
 
 ---
 
